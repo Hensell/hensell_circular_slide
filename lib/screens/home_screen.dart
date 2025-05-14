@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:url_launcher/url_launcher_string.dart';
 import '../widgets/carousel_card.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -42,10 +41,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: Text(
                     "Choose your starting widgets",
-                    style: GoogleFonts.luckiestGuy(fontSize: 24),
+                    style: GoogleFonts.luckiestGuy(fontSize: 30),
                     textAlign: TextAlign.center,
                   ),
                 ),
+                SizedBox(height: 35),
                 SizedBox(
                   height: 300,
                   child: PageView.builder(
@@ -57,6 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                   ),
                 ),
+                SizedBox(height: 35),
                 Icon(Icons.swipe_right_outlined, color: Colors.blueGrey),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
