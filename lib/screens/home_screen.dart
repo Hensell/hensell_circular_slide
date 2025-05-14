@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 import '../widgets/carousel_card.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -31,15 +33,10 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Container(
             width: 400,
             margin: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-            decoration: BoxDecoration(
-              border: Border.all(
-                width: 10,
-                color: Colors.black.withValues(alpha: 0.2),
-              ),
-              borderRadius: BorderRadius.circular(15),
-            ),
+
             child: Column(
               children: [
+                Image.asset('assets/images/cat.png', width: 72),
                 SizedBox(height: 15),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -68,11 +65,23 @@ class _HomeScreenState extends State<HomeScreen> {
                     textAlign: TextAlign.center,
                   ),
                 ),
+                TextButton(
+                  onPressed: _launchURL,
+                  child: Text("Made by @Henselldev"),
+                ),
               ],
             ),
           ),
         ),
       ),
     );
+  }
+}
+
+final Uri _url = Uri.parse('https://hensell.dev');
+
+Future<void> _launchURL() async {
+  if (!await launchUrl(_url, mode: LaunchMode.externalApplication)) {
+    throw Exception('No se pudo abrir $_url');
   }
 }
