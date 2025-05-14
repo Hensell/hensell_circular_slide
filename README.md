@@ -9,7 +9,6 @@ A custom carousel animation built with Flutter, showcasing cards with rotation e
 
 [Link](https://hensell-circular-slide.pages.dev)
 
----
 
 ## 🚀 Features
 
@@ -22,9 +21,9 @@ A custom carousel animation built with Flutter, showcasing cards with rotation e
 
 ## 🖼️ Preview
 
-<img src="screenshots/1.gif" width="200" height="417" />
-<img src="screenshots/1.png" width="200" height="417" />
-<img src="screenshots/2.png" width="200" height="417" />
+<img src="screenshots/1.gif" />
+<img src="screenshots/1.png" />
+<img src="screenshots/2.png" />
 
 ---
 
