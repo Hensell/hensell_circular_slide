@@ -27,52 +27,49 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
+      body: Center(
         child: SingleChildScrollView(
-          child: Center(
-            child: Container(
-              width: 400,
-              margin: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+          child: Container(
+            width: 400,
+            margin: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
 
-              child: Column(
-                children: [
-                  Image.asset('assets/images/cat.png', width: 72),
-                  SizedBox(height: 15),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 15),
-                    child: Text(
-                      "Choose your starting widgets",
-                      style: GoogleFonts.luckiestGuy(fontSize: 30),
-                      textAlign: TextAlign.center,
-                    ),
+            child: Column(
+              children: [
+                SizedBox(height: 15),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: Text(
+                    "Choose your starting widgets",
+                    style: GoogleFonts.luckiestGuy(fontSize: 30),
+                    textAlign: TextAlign.center,
                   ),
-                  SizedBox(height: 35),
-                  SizedBox(
-                    height: 300,
-                    child: PageView.builder(
-                      controller: _controller,
-                      itemCount: 6,
-                      itemBuilder: (context, index) {
-                        final offset = _currentPage - index;
-                        return CarouselCard(index: index, offset: offset);
-                      },
-                    ),
+                ),
+                SizedBox(height: 35),
+                SizedBox(
+                  height: 300,
+                  child: PageView.builder(
+                    controller: _controller,
+                    itemCount: 6,
+                    itemBuilder: (context, index) {
+                      final offset = _currentPage - index;
+                      return CarouselCard(index: index, offset: offset);
+                    },
                   ),
-                  SizedBox(height: 35),
-                  Icon(Icons.swipe_right_outlined, color: Colors.blueGrey),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      "Swipe through and pick the pack that best describes what you're looking for.",
-                      textAlign: TextAlign.center,
-                    ),
+                ),
+                SizedBox(height: 35),
+                Icon(Icons.swipe_right_outlined, color: Colors.blueGrey),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    "Swipe through and pick the pack that best describes what you're looking for.",
+                    textAlign: TextAlign.center,
                   ),
-                  TextButton(
-                    onPressed: _launchURL,
-                    child: Text("Made by @Henselldev"),
-                  ),
-                ],
-              ),
+                ),
+                TextButton(
+                  onPressed: _launchURL,
+                  child: Text("Made by @Henselldev"),
+                ),
+              ],
             ),
           ),
         ),
